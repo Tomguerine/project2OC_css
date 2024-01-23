@@ -1,0 +1,66 @@
+// Define color variables
+$primary-color: #C23680
+$location-color: #555
+$background-color: #FFF
+
+// Define font variables
+$font-primary: 'Avenir', sans-serif
+
+// Global styles
+body
+  font-family: $font-primary
+  background-color: $background-color
+  margin: 0
+  padding: 0
+
+// headers
+.header
+  text-align: center // Centers the content of the header
+  &__logo
+    display: block // Ensures the image is on a line of its own
+    margin: 0 auto // Centers the image within the header
+    width: 100%
+    height: 34px
+    background-color: white // Sets the background color of the logo's box to white
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) // Adds a subtle shadow below the box
+    padding: 20px // Adds some space around the logo inside the box
+    border-radius: 4px // Optional: rounds the corners of the box
+
+  &__location
+    font-size: 1rem
+    margin-top: 8px // Adds space between the logo and the location text
+    width: 100%
+    height: 50px
+    color: #555 // Adjust the color to match your design
+    background-color: #EAEAEA // Sets the background color of the location box
+    display: inline-block // Makes the div inline to wrap the content
+    border-radius: 4px // Rounds the corners of the location box
+
+
+// Reservation section styles
+.reservation
+  padding: 40px
+
+  &__title
+    font-size: 1.8rem
+    font-weight: bold
+    text-align: center
+    margin-bottom: 10px
+
+  &__description
+    font-size: 1rem
+    text-align: center
+    margin-bottom: 20px
+
+  &__button
+    font-size: 1rem
+    padding: 15px 30px
+    background-color: $primary-color
+    border: none
+    border-radius: 25px
+    color: $background-color
+    display: block
+    margin: auto
+    cursor: pointer
+    &:hover
+      background-color: darken($primary-color, 10%)
