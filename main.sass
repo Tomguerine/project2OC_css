@@ -2,7 +2,8 @@
 $primary-color: #C23680
 $location-color: #555
 $background-color: #FFF
-
+$background-color-secondary: #f6f6f6
+$background-color-purple:#9356DC  
 // Define font variables
 $font-primary: 'Avenir', sans-serif
 
@@ -12,6 +13,25 @@ body
   background-color: $background-color
   margin: 0
   padding: 0
+
+h1
+  font-size: 2em // For h1, typically the largest heading
+  margin-block-start: 0em
+  margin-block-end: 0em
+  font-weight: bold
+
+h2
+  font-size: 1.5em // Slightly smaller than h1
+  margin-block-start: 0em
+  margin-block-end: 0em
+  font-weight: bold
+
+h3
+  font-size: 1.17em // Slightly smaller than h2
+  margin-block-start: 0em
+  margin-block-end: 0em
+  font-weight: bold
+
 
 // headers
 .header
@@ -64,3 +84,104 @@ body
     cursor: pointer
     &:hover
       background-color: darken($primary-color, 10%)
+
+
+// meu section
+
+.menu-section
+  background-color: $background-color-secondary
+  text-align: center // Center-align the text for all content within .menu-section
+
+  &__title
+    font-size: 1.5em // Set the size of the title
+    font-weight: bold
+    text-align: center // Center-align the text
+    display: block
+    margin-left: 40px
+    margin-right: 40px 
+    padding-top: 30px
+
+  &__description
+    font-weight: bold
+    text-align: center // Center-align the text
+    display: block
+    margin-left: 10px // Auto margin for horizontal centering
+    margin-right: 10px // Auto margin for horizontal centering
+
+  &__action-button
+    font-weight: bold
+    text-align: center // Center-align the text inside the button
+    display: inline-block // Change display to inline-block for proper padding and border-radius application
+    padding: 10px 20px // Add padding to increase button size and make text more readable
+    background-color: #ff5722 // Example button color, choose what fits your design
+    color: white // Text color for the button
+    text-decoration: none // Remove underline from link
+    border-radius: 20px // Rounded corners on the left side of the button
+    margin-top: 20px // Add some margin at the top for spacing
+    cursor: pointer // Change cursor to pointer to indicate it's clickable
+    margin-bottom: 50px // Add some margin at the bottom for spacing
+
+    &:hover
+      background-color: darken(#ff5722, 10%)
+// how it works
+.how-it-works
+  &__title
+    font-size: 1.5em // Set the size of the title
+    font-weight: bold
+    display: block
+    margin-left: 15px
+    padding-top: 40px
+
+  &__list
+    list-style: none
+    padding-left: 0
+    counter-reset: item // Initialize the list counter
+    margin-left: 30px // Add left margin to the entire block
+    margin-right: 20px // Add right margin to the entire block
+  &__text
+    font-family: 'Roboto', sans-serif // Définit la police Roboto
+    font-weight: 500 // Poids de la police
+    font-size: 16px // Taille de la police
+  &__item
+    position: relative
+    margin-bottom: 20px
+    padding: 10px 30px
+    background-color: #F6F6F6
+    border-radius: 20px
+    display: flex
+    align-items: center
+    justify-content: center // Centrally aligns children horizontally
+
+    box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.1), 0 12px 25px 0 rgba(0, 0, 0, 0.1) // Adjusted to make shadow wider and more subtle
+
+    &:before
+      content: counter(item)
+      counter-increment: item
+      position: absolute
+      left: -10px
+      top: 50%
+      transform: translateY(-50%)
+      background-color: $background-color-purple
+      color: #fff
+      border-radius: 50%
+      width: 24px
+      height: 24px
+      display: flex
+      justify-content: center
+      align-items: center
+    .how-it-works__icon
+      position: absolute
+      margin-right: 15px
+      margin-bottom: 3px
+      left: 50px // Keeps the icon on the left inside the item
+      transform: scale(1.2) // Increase the icon size by 20%
+      .fa-mobile-alt 
+        color: #7E7E7E
+      .fa-list-ul
+        color: #7E7E7E 
+      .fa-store 
+        color: $background-color-purple 
+    
+    .how-it-works__text
+      flex: 1
+      text-align: center // Ensure the text itself is centered within its flex container
