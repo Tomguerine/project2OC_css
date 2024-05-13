@@ -104,7 +104,7 @@ h3 {
   text-align: center;
   display: inline-block;
   padding: 10px 20px;
-  background-color: #ff5722;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
   color: white;
   text-decoration: none;
   border-radius: 20px;
@@ -113,7 +113,7 @@ h3 {
   margin-bottom: 50px;
 }
 .menu-section__action-button:hover {
-  background-color: #ee3900;
+  background: linear-gradient(193.33deg, #782cd3 -11.44%, #ff46cc 123.93%);
 }
 
 .how-it-works__title {
@@ -196,7 +196,7 @@ h3 {
   padding-left: 20px;
   font-family: "Roboto";
   font-size: 24px;
-  padding-top: 20px;
+  padding-top: 40px;
   font-weight: 700;
   text-align: left;
   color: #333;
@@ -258,7 +258,23 @@ h3 {
   right: 1rem;
 }
 .restaurants .restaurant__tag--new {
-  background-color: #2ECC71;
+  background-color: transparent;
+  color: #000;
+  font-size: 1.5rem;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  cursor: pointer;
+}
+.restaurants .heart-active {
+  font-family: "FontAwesome";
+  content: "\f004";
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 .restaurants .restaurant__like-button {
   padding: 0.5rem;

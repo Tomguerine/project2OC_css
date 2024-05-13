@@ -111,19 +111,20 @@ h3
 
   &__action-button
     font-weight: bold
-    text-align: center // Center-align the text inside the button
-    display: inline-block // Change display to inline-block for proper padding and border-radius application
-    padding: 10px 20px // Add padding to increase button size and make text more readable
-    background-color: #ff5722 // Example button color, choose what fits your design
-    color: white // Text color for the button
-    text-decoration: none // Remove underline from link
-    border-radius: 20px // Rounded corners on the left side of the button
-    margin-top: 20px // Add some margin at the top for spacing
-    cursor: pointer // Change cursor to pointer to indicate it's clickable
-    margin-bottom: 50px // Add some margin at the bottom for spacing
+    text-align: center // Centre le texte dans le bouton
+    display: inline-block // Modifie l'affichage en inline-block pour appliquer correctement le padding et le border-radius
+    padding: 10px 20px // Ajoute un padding pour augmenter la taille du bouton et rendre le texte plus lisible
+    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%) // Applique le dégradé comme couleur de fond
+    color: white // Couleur du texte pour le bouton
+    text-decoration: none // Enlève le soulignement du lien
+    border-radius: 20px // Coins arrondis
+    margin-top: 20px // Ajoute une marge en haut pour l'espacement
+    cursor: pointer // Change le curseur en pointeur pour indiquer qu'il est cliquable
+    margin-bottom: 50px // Ajoute une marge en bas pour l'espacement
 
     &:hover
-      background-color: darken(#ff5722, 10%)
+      background: linear-gradient(193.33deg, darken(#9356DC, 10%) -11.44%, darken(#FF79DA, 10%) 123.93%) // Assombrit le dégradé lors du survol
+
 // how it works
 .how-it-works
   &__title
@@ -205,7 +206,7 @@ h3
   
     font-family: 'Roboto'
     font-size: 24px
-    padding-top: 20px
+    padding-top: 40px
     font-weight: 700
     text-align: left
     color: #333
@@ -267,9 +268,25 @@ h3
     position: absolute
     top: 1rem
     right: 1rem
+  .restaurant__tag--new 
+    background-color: transparent // Retire le fond coloré pour mettre l'icône en évidence
+    color: #000 // Couleur de l'icône inactif
+    font-size: 1.5rem // Taille de l'icône
+    display: flex // Utilise flex pour centrer l'icône
+    width: 30px // Largeur fixée
+    height: 30px // Hauteur fixée
+    margin-top: -15px
+    cursor: pointer // Indique que l'élément est cliquable
 
-  .restaurant__tag--new
-    background-color: #2ECC71
+  .heart-active 
+    font-family: 'FontAwesome' // S'assure que la police FontAwesome est utilisée
+    content: '\f004' // Unicode pour l'icône cœur plein de FontAwesome
+    color: transparent // Garde la couleur de l'icône transparente
+    -webkit-text-fill-color: transparent // Spécifique pour Webkit, garde le texte transparent
+    background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%)
+    -webkit-background-clip: text
+    background-clip: text
+
 
   .restaurant__like-button
     padding: 0.5rem

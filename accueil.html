@@ -7,10 +7,15 @@
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
       rel="stylesheet"
     />
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
     <title>Ohmyfood</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="main.css" />
+    <i class="fa-thin fa-heart"></i>
   </head>
   <body>
     <header class="header">
@@ -66,7 +71,9 @@
           <div class="restaurant__info">
             <h3 class="restaurant__name">La palette du goût</h3>
             <p class="restaurant__location">Ménilmontant</p>
-            <div class="restaurant__tag restaurant__tag--new">Nouveau</div>
+            <div class="restaurant__tag restaurant__tag--new">
+              <i class="fa-regular fa-heart heart-icon"></i>
+            </div>
           </div>
           <button class="restaurant__like-button">Like</button>
         </article>
@@ -81,7 +88,9 @@
           <div class="restaurant__info">
             <h3 class="restaurant__name">La note enchantée</h3>
             <p class="restaurant__location">Charonne</p>
-            <div class="restaurant__tag restaurant__tag--new">Nouveau</div>
+            <div class="restaurant__tag restaurant__tag--new">
+              <i class="fa-regular fa-heart heart-icon"></i>
+            </div>
           </div>
           <button class="restaurant__like-button">Like</button>
         </article>
@@ -96,6 +105,9 @@
           <div class="restaurant__info">
             <h3 class="restaurant__name">À la française</h3>
             <p class="restaurant__location">Cité Rouge</p>
+            <div class="restaurant__tag restaurant__tag--new">
+              <i class="fa-regular fa-heart" id="heart-icon"></i>
+            </div>
           </div>
           <button class="restaurant__like-button">Like</button>
         </article>
@@ -110,6 +122,9 @@
           <div class="restaurant__info">
             <h3 class="restaurant__name">Le délice des sens</h3>
             <p class="restaurant__location">Folie-Méricourt</p>
+            <div class="restaurant__tag restaurant__tag--new">
+              <i class="fa-regular fa-heart" id="heart-icon"></i>
+            </div>
           </div>
           <button class="restaurant__like-button">Like</button>
         </article>
@@ -139,4 +154,11 @@
       </ul>
     </nav>
   </footer>
+  <script>
+    document.querySelectorAll(".heart-icon").forEach(function (icon) {
+      icon.addEventListener("click", function () {
+        this.classList.toggle("heart-active");
+      });
+    });
+  </script>
 </html>
