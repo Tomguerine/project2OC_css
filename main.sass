@@ -6,6 +6,7 @@ $background-color-secondary: #f6f6f6
 $background-color-purple:#9356DC  
 // Define font variables
 $font-primary: 'Avenir', sans-serif
+$padding-size: 40px
 
 // Global styles
 body
@@ -126,11 +127,15 @@ h3
 // how it works
 .how-it-works
   &__title
-    font-size: 1.5em // Set the size of the title
-    font-weight: bold
-    display: block
-    margin-left: 15px
-    padding-top: 40px
+    font-family: 'Roboto', sans-serif
+    font-size: 24px
+    font-weight: 700
+    line-height: 28.13px
+    text-align: left
+    color: #333
+    margin-bottom: 2rem
+    margin-left: 40px
+    margin-top: 40px
 
   &__list
     list-style: none
@@ -185,3 +190,97 @@ h3
     .how-it-works__text
       flex: 1
       text-align: center // Ensure the text itself is centered within its flex container
+
+
+      
+// Style de base pour la section des restaurants
+.restaurants
+  display: flex
+  flex-direction: column
+  background-color: $background-color-secondary
+ 
+
+  .restaurants__title
+    padding-left: 20px
+  
+    font-family: 'Roboto'
+    font-size: 24px
+    padding-top: 20px
+    font-weight: 700
+    text-align: left
+    color: #333
+  // Style pour la liste des restaurants
+  .restaurants__list
+    padding: 20px
+
+    display: flex
+    flex-direction: column
+    gap: 2rem
+
+  // Style de chaque restaurant
+  .restaurant
+    display: flex
+    flex-direction: column
+    align-items: center
+    background: white
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+    border-radius: 20px
+    overflow: hidden
+
+  .restaurant__image
+    width: 100%
+    display: block
+    object-fit: cover
+    border-top-left-radius: 20px
+    border-top-right-radius: 20px
+    height: 150px 
+
+  .restaurant__info
+    margin-top: 10px
+    padding-left: 30px
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: start
+    background: white
+    position: relative
+
+  .restaurant__name
+    font-family: Roboto
+    font-size: 18px
+    font-weight: 700
+    line-height: 21.09px
+    text-align: left
+
+
+  .restaurant__location
+    font-size: 1rem
+    color: #666
+    margin-top: 0px
+
+  .restaurant__tag
+    padding: 0.25rem 0.75rem
+    background-color: #51A1FF
+    color: white
+    border-radius: 15px
+    font-size: 0.85rem
+    position: absolute
+    top: 1rem
+    right: 1rem
+
+  .restaurant__tag--new
+    background-color: #2ECC71
+
+  .restaurant__like-button
+    padding: 0.5rem
+    background-color: transparent
+    border: none
+    color: #555
+    cursor: pointer
+    position: absolute
+    top: 1rem
+    left: 1rem
+    font-size: 1.5rem
+
+    &:hover
+      color: #ff4757
