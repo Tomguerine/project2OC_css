@@ -3,7 +3,7 @@ $primary-color: #C23680
 $location-color: #555
 $background-color: #FFF
 $background-color-secondary: #f6f6f6
-$background-color-purple:#9356DC  
+$background-color-purple: #9356DC
 $background-color-grey: #353535
 
 // Define font variables
@@ -46,7 +46,6 @@ h4
   line-height: normal
   margin: Opx
 
-
 h5
   margin-block-start: 0em
   margin-block-end: 0em
@@ -69,9 +68,41 @@ h5
   margin-top: 20px // Ajoute une marge en haut pour l'espacement
   cursor: pointer // Change le curseur en pointeur pour indiquer qu'il est cliquable
   margin-bottom: 50px // Ajoute une marge en bas pour l'espacement
-  border: none 
+  border: none
   &:hover
     background: linear-gradient(193.33deg, darken(#9356DC, 10%) -11.44%, darken(#FF79DA, 10%) 123.93%) // Assombrit le dégradé lors du survol
+// Animation 
+
+.loading
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-color: rgba(0, 0, 0, 0.5) // Gray background with 50% opacity
+  display: flex
+  justify-content: center // Center horizontally
+  align-items: center // Center vertically
+  z-index: 9999 // Ensure it's on top of other content
+  animation: hideLoading 3s forwards // Automatically hide after 4 seconds (3s display, 1s fade-out)
+
+  /* Make the spinner larger */
+  i
+    font-size: 5rem
+    color: white
+
+@keyframes hideLoading
+  0%
+    opacity: 1
+    visibility: visible
+
+  75%
+    opacity: 1 // Keep visible for 3 seconds
+
+  100%
+    opacity: 0 // Fade out at 4 seconds
+    visibility: hidden // Hide visibility
+    display: none // Display none will apply after animation
 
 // headers
 .header
@@ -82,7 +113,7 @@ h5
     width: 100%
     height: 34px
     background-color: white // Sets the background color of the logo's box to white
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25) 
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25)
     padding: 30px 0 15px 0 // Adds padding around the logo inside the box
     border-radius: 4px // Optional: rounds the corners of the box
 
@@ -131,7 +162,6 @@ h5
     &:hover
       background-color: darken($primary-color, 10%)
 
-
 // meu section
 
 .menu-section
@@ -144,7 +174,7 @@ h5
     text-align: center // Center-align the text
     display: block
     margin-left: 40px
-    margin-right: 40px 
+    margin-right: 40px
     padding-top: 30px
 
   &__description
@@ -154,7 +184,7 @@ h5
     margin-left: 10px // Auto margin for horizontal centering
     margin-right: 10px // Auto margin for horizontal centering
   &__subtitle
- 
+
     padding: 10px
   &__action-button
     @extend .action-button // Utilise la classe utilitaire pour hériter des styles du bouton d'actionbackground: linear-gradient(193.33deg, darken(#9356DC, 10%) -11.44%, darken(#FF79DA, 10%) 123.93%) // Assombrit le dégradé lors du survol
@@ -225,22 +255,20 @@ h5
       justify-content: center
       align-items: center
     .how-it-works__icon
-      margin-left:25px
+      margin-left: 25px
       margin-bottom: 3px
       transform: scale(1.2) // Increase the icon size by 20%
-      .fa-mobile-alt 
+      .fa-mobile-alt
         color: #7E7E7E
       .fa-list-ul
-        color: #7E7E7E 
-      .fa-store 
-        color: $background-color-purple 
-    
+        color: #7E7E7E
+      .fa-store
+        color: $background-color-purple
+
     .how-it-works__text
       flex: 1
       text-align: center // Ensure the text itself is centered within its flex container
 
-
-      
 // Style de base pour la section des restaurants
 .restaurants
   display: flex
@@ -249,7 +277,11 @@ h5
   @media (min-width: 768px) // Pour les écrans de taille moyenne et plus
     padding-left: 10% // Augmente l'espace à gauche pour les écrans larges
     padding-right: 10% // Augmente l'espace à droite également
-
+  .restaurant-link
+    display: block
+    text-decoration: none
+    color: inherit
+    width: 100%
 
   .restaurants__title
     padding-left: 20px
@@ -267,10 +299,11 @@ h5
     gap: 2rem
 
     @media (min-width: 768px) // Pour les écrans de taille moyenne et plus
-      flex-direction: row // Passe de colonne à ligne
-      flex-wrap: wrap // Permet aux éléments de passer à la ligne suivante si nécessaire
-      justify-content: space-between // Espace entre les colonnes pour éviter le chevauchement
-      margin-left: 30px // Add left margin to the entire block
+      display: grid // Use CSS Grid for layout
+      grid-template-columns: 1fr 1fr // Two equal columns for medium screens and up
+      grid-template-rows: auto auto // Create rows as needed, two rows in total
+      justify-items: stretch // Stretch items to fill the grid
+      margin-left: 30px
 
   // Style de chaque restaurant
   .restaurant
@@ -284,8 +317,6 @@ h5
 
     @media (min-width: 768px) // Pour les petits écrans
       width: 100% // Chaque élément occupe 100% de la largeur
-      flex: 1 1 calc(50% - 20px) // Chaque élément occupe 50% de la largeur moins 20px de marge
-      max-width: calc(50% - 20px) // Limite la largeur maximale à 50% moins 20px de marge
       margin-bottom: 20px // Espace entre les lignes
 
   .restaurant__image-container
@@ -296,18 +327,17 @@ h5
 
   .restaurant-item
 
-  
   .restaurant__image
     width: 100%
     height: 100%
     display: block
-    height: 150px 
+    height: 150px
 
     object-fit: cover
     border-top-left-radius: 20px
     border-top-right-radius: 20px
     @media (min-width: 768px) // Pour les écrans de taille moyenne et plus
-      height: 250px 
+      height: 250px
 
   .restaurant__info
     margin-top: 10px
@@ -316,17 +346,15 @@ h5
     display: flex
     flex-direction: column
     align-items: start
-    background: white 
+    background: white
     position: relative
 
   .restaurant__name
 
     text-align: left
 
-
   .restaurant__location
     margin: 5px 0px 15px 0px
-
 
   .restaurant__tag
     padding: 0.25rem 0.75rem
@@ -351,8 +379,8 @@ h5
     font-style: normal
     font-weight: 500
     line-height: normal
-    
-  .restaurant__tag--new 
+
+  .restaurant__tag--new
     background-color: transparent // Retire le fond coloré pour mettre l'icône en évidence
     color: #000 // Couleur de l'icône inactif
     font-size: 1.5rem // Taille de l'icône
@@ -362,28 +390,19 @@ h5
     margin-top: -15px
     cursor: pointer // Indique que l'élément est cliquable
 
-  .heart-active 
-    font-family: 'FontAwesome' // S'assure que la police FontAwesome est utilisée
-    content: '\f004' // Unicode pour l'icône cœur plein de FontAwesome
-    color: transparent // Garde la couleur de l'icône transparente
-    -webkit-text-fill-color: transparent // Spécifique pour Webkit, garde le texte transparent
-    background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%)
-    -webkit-background-clip: text
-    background-clip: text
-
-
-
-
+  .heart-icon
+    @extend .animated-heart // Reuse all properties from .animated-heart
 
 .footer
   display: flex
   flex-direction: column
   background-color: $background-color-grey
   @media (min-width: 768px) // Pour les écrans de taille moyenne et plus
-    padding-left: 10% // Augmente l'espace à gauche pour les écrans larges
-    padding-right: 10% // Augmente l'espace à droite également
-
-
+    display: flex
+    flex-direction: row-reverse // Ensures the list items flow from right to left
+    gap: 40px // Adds space between list items
+    padding-top: 50px
+    padding-right: 30px // Add some padding to the right to offset the content from the edge
   .footer__branding
     color: var(--White, #FFF)
     font-family: Shrikhand
@@ -392,11 +411,20 @@ h5
     font-weight: 400
     line-height: normal
     padding: 20px
+    @media (min-width: 768px)
 
+      padding: 0 // Remove padding on larger screens for tighter alignment
+      padding-left: 30px // Add padding to the left for spacing
   .footer__list
     list-style: none // Removes the bullet points from the list
     // margin: 0px 0px 0px 0px // Removes any default margin from the list
     padding: 0px 0px 60px 20px // Removes any default margin from the list
+    @media (min-width: 768px)
+      display: flex
+      justify-content: flex-end // Aligns items to the right on larger screens
+      flex-direction: row // Ensures the list items flow from right to left
+      gap: 30px // Adds space between list items
+      padding: 0px 0px 10px 20px // Removes any default margin from the list
 
   .footer__navigation
     list-style: none // Removes the bullet points from the list
@@ -412,7 +440,6 @@ h5
     line-height: normal
     padding-bottom: 5px
 
-
   .footer__link
     color: var(--White, #FFF) // Changes the link color to white (or any color you prefer)
     text-decoration: none // Removes the underline from the links
@@ -420,6 +447,37 @@ h5
     &:hover
       text-decoration: underline // Optional: Add underline on hover to indicate interactivity
 
+.animated-heart
+  position: relative
+  font-family: 'FontAwesome' // Can be adjusted for different icons
+  font-size: 1.5rem
+  color: transparent // Start with the heart empty
+  background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%)
+  -webkit-background-clip: text
+  background-clip: text
+  -webkit-text-fill-color: transparent
+  background-size: 0% 100% // Initially no fill
+  background-position: left
+  transition: background-size 1s ease-in-out, -webkit-text-fill-color 1s ease-in-out // Smooth transition for background fill
+  -webkit-text-stroke: 1.5px black // Add a black border/stroke around the heart or icon
+
+  /* Animation on hover */
+  &:hover
+    animation: fillHeart 1s forwards // Start animation on hover
+
+  /* Active state where the heart is fully filled */
+  &.heart-active
+    background-size: 100% 100%
+    -webkit-text-fill-color: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%) // Filled gradient color when active
+
+@keyframes fillHeart
+  0%
+    opacity: 0
+    background-size: 0% 100% // Start with no fill
+
+  100%
+    opacity: 1
+    background-size: 100% 100% // Fully filled heart
 
   ////MENU Home
 .headerMenu
@@ -431,7 +489,7 @@ h5
     width: 100%
     height: 34px
     background-color: white // Sets the background color of the logo's box to white
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25) 
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25)
     padding: 30px 0 15px 0 // Adds padding around the logo inside the box
     border-radius: 4px // Optional: rounds the corners of the box
 
@@ -463,6 +521,11 @@ h5
     width: auto // Maintains the aspect ratio of the image
     height: auto // Maintains the aspect ratio of the image
     object-fit: cover // Ensures the image covers the container without distortion
+    @media (min-width: 768px)
+      width: 100% // Sets the image width to 100% on PC
+      height: 400px // Sets the image height to 300px for the PC version
+      object-fit: cover // Ensures the image covers the container, cropping if necessary
+      object-position: center // Centers the image for a better visual effect
 
 .menuHome
   display: flex
@@ -477,7 +540,11 @@ h5
   padding-top: 40px // Add padding to push the content down within .menuHome
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
   align-items: center // Center the content horizontally
+  @media (min-width: 768px)
+    width: 80%
 
+    padding-left: 20px
+    padding-right: 20px
   &__header
     display: flex
     align-items: center // Center the content vertically
@@ -508,13 +575,13 @@ h5
     outline: none
     margin-left: 10px // Optional: Adjust spacing between title and button
 
-  .heart-active
-    font-family: 'FontAwesome'
-    color: transparent
-    background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%)
-    -webkit-background-clip: text
-    background-clip: text
-    -webkit-text-fill-color: transparent
+    .heart-icon
+      @extend .animated-heart // Reuse all properties from .animated-heart
+.menu
+  @media (min-width: 768px)
+    align-items: center
+    width: 70% // Increase the width to make items appear longer
+
 .menu__heading
   display: flex
   width: 275px
@@ -542,7 +609,6 @@ h5
     bottom: -5px // Adjust the position relative to the heading
     left: 15px // Align the line to start at the same position as the text
 
-
 .menu__item
   display: flex
   justify-content: space-between
@@ -553,6 +619,10 @@ h5
   background-color: #fff
   border-radius: 20px
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+
+  @media (min-width: 768px)
+    padding: 20px
+    margin: 15px 0
 
   .menu__item-info
     display: flex
@@ -581,6 +651,5 @@ h5
     color: #101010
     margin-left: auto // Pushes the price to the far right
   &__action-button
-    padding: 10px 
+    padding: 10px
     @extend .action-button // Utilise la classe utilitaire pour hériter des styles du bouton d'actionbackground: linear-gradient(193.33deg, darken(#9356DC, 10%) -11.44%, darken(#FF79DA, 10%) 123.93%) // Assombrit le dégradé lors du survol
-
