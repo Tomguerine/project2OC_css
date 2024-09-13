@@ -142,7 +142,7 @@
               <h3 class="restaurant__name">À la française</h3>
               <h4 class="restaurant__location">Cité Rouge</h4>
               <div class="restaurant__tag restaurant__tag--new">
-                <i class="fa-regular fa-heart" id="heart-icon"></i>
+                <i class="fa-regular fa-heart heart-icon"></i>
               </div>
             </div>
             <!-- <button class="restaurant__like-button">Like</button> -->
@@ -172,7 +172,7 @@
               <h3 class="restaurant__name">Le délice des sens</h3>
               <h4 class="restaurant__location">Folie-Méricourt</h4>
               <div class="restaurant__tag restaurant__tag--new">
-                <i class="fa-regular fa-heart" id="heart-icon"></i>
+                <i class="fa-regular fa-heart heart-icon"></i>
               </div>
             </div>
             <!-- Added nouveauté rectangle -->
@@ -232,11 +232,4 @@
       </ul>
     </nav>
   </footer>
-  <script>
-    document.querySelectorAll(".heart-icon").forEach(function (icon) {
-      icon.addEventListener("click", function () {
-        this.classList.toggle("heart-active");
-      });
-    });
-  </script>
 </html>
