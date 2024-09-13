@@ -50,7 +50,7 @@ h5 {
   line-height: normal;
 }
 
-.action-button, .menu__item__action-button, .menu-section__action-button {
+.action-button, .menu-section__action-button {
   font-weight: bold;
   text-align: center;
   display: inline-block;
@@ -64,7 +64,7 @@ h5 {
   margin-bottom: 50px;
   border: none;
 }
-.action-button:hover, .menu__item__action-button:hover, .menu-section__action-button:hover {
+.action-button:hover, .menu-section__action-button:hover {
   background: linear-gradient(193.33deg, #782cd3 -11.44%, #ff46cc 123.93%);
 }
 
@@ -586,7 +586,7 @@ h5 {
 .menuHome .menuHome__tag--new {
   background-color: transparent;
   color: #000;
-  font-size: 1.5rem;
+  font-size: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -634,32 +634,35 @@ h5 {
 
 .menu__item {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  gap: 10px;
+  align-items: stretch;
+  padding: 0;
   margin: 10px;
   background-color: #fff;
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 @media (min-width: 768px) {
   .menu__item {
-    padding: 20px;
+    padding: 0;
     margin: 15px 0;
   }
 }
 .menu__item .menu__item-info {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
+  padding: 10px;
+}
+.menu__item-name, .menu__item-description {
+  margin: 0;
 }
 .menu__item-name {
   font-family: Roboto;
   font-size: 18px;
   font-weight: 400;
   color: #101010;
-  margin: 0;
 }
 .menu__item-description {
   font-family: Roboto;
@@ -667,15 +670,39 @@ h5 {
   font-weight: 300;
   color: #757575;
   margin-top: 5px;
-  margin-bottom: 0;
 }
 .menu__item-price {
   font-family: Roboto;
   font-size: 16px;
   font-weight: 400;
   color: #101010;
-  margin-left: auto;
+  margin: 0 20px;
+  margin-top: 10px;
+  flex-shrink: 0;
+  transition: margin 0.3s ease;
+  display: flex;
+  align-items: center;
 }
-.menu__item__action-button {
-  padding: 10px;
+.menu__item-validation {
+  width: 0;
+  background-color: #99E2D0;
+  color: #101010;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.3s ease;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.menu__item-validation svg {
+  fill: #fff;
+  width: 60px;
+  height: 60px;
+}
+.menu__item:hover .menu__item-validation {
+  width: 60px;
+}
+.menu__item:hover .menu__item-price {
+  margin: 0 20px;
+  margin-top: 10px;
 }/*# sourceMappingURL=main.css.map */
