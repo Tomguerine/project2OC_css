@@ -463,11 +463,6 @@ h5
   &:hover
     animation: fillHeart 1s forwards // Start animation on hover
 
-  /* Active state where the heart is fully filled */
-  &.heart-active
-    background-size: 100% 100%
-    -webkit-text-fill-color: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%) // Filled gradient color when active
-
 @keyframes fillHeart
   0%
     opacity: 0
@@ -476,7 +471,14 @@ h5
   100%
     opacity: 1
     background-size: 100% 100% // Fully filled heart
+@keyframes fillHeartLeave
+  100%
+    opacity: 1
+    background-size: 100% 100% // Start with no fill
 
+  0%
+    opacity: 0
+    background-size: 0% 100% // Fully filled heart
   ////MENU Home
 .headerMenu
   display: flex
