@@ -381,15 +381,20 @@ h5
   .restaurant__tag--new
     background-color: transparent // Retire le fond coloré pour mettre l'icône en évidence
     color: #000 // Couleur de l'icône inactif
-    font-size: 1.5rem // Taille de l'icône
     display: flex // Utilise flex pour centrer l'icône
-    width: 30px // Largeur fixée
-    height: 30px // Hauteur fixée
     margin-top: -15px
     cursor: pointer // Indique que l'élément est cliquable
+    font-size: 1.0rem
+    justify-content: center
+    align-items: center
+    width: 30px
+    height: 30px
+    cursor: pointer
+    border: none
+    outline: none
 
-  .heart-icon
-    @extend .animated-heart // Reuse all properties from .animated-heart
+    #animated-heart
+      @extend .animated-heart // Reuse all properties from .animated-heart
 
 .footer
   display: flex
@@ -444,42 +449,27 @@ h5
 
     &:hover
       text-decoration: underline // Optional: Add underline on hover to indicate interactivity
-
 .animated-heart
   position: relative
-  font-family: 'FontAwesome' // Can be adjusted for different icons
-  font-size: 1.5rem
-  color: transparent // Start with the heart empty
+  font-family: 'FontAwesome' // Peut être ajusté pour différents icônes
+  font-size: 1.3rem
+  color: transparent // Commence avec le cœur vide
   background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%)
   -webkit-background-clip: text
   background-clip: text
   -webkit-text-fill-color: transparent
-  background-size: 0% 100% // Initially no fill
+  background-size: 0% 100% // Initialement pas de remplissage
   background-position: left
-  transition: background-size 1s ease-in-out, -webkit-text-fill-color 1s ease-in-out // Smooth transition for background fill
-  -webkit-text-stroke: 1.5px black // Add a black border/stroke around the heart or icon
+  transition: background-size 1s ease-in-out, opacity 1s ease-in-out, -webkit-text-stroke 0.3s ease // Transition douce pour le changement de la bordure
+  -webkit-text-stroke: 1.2px black // Ajoute une bordure noire autour du cœur ou de l'icône
+  z-index: 2 // Devant le cœur statique
 
-  /* Animation on hover */
+  opacity: 0 // Commence transparent
+
   &:hover
-    animation: fillHeart 1s forwards // Start animation on hover
-
-@keyframes fillHeart
-  0%
-    opacity: 0
-    background-size: 0% 100% // Start with no fill
-
-  100%
-    opacity: 1
-    background-size: 100% 100% // Fully filled heart
-@keyframes fillHeartLeave
-  100%
-    opacity: 1
-    background-size: 100% 100% // Start with no fill
-
-  0%
-    opacity: 0
-    background-size: 0% 100% // Fully filled heart
-  ////MENU Home
+    background-size: 100% 100% // Remplit complètement le cœur
+    opacity: 1 // Rend le cœur visible
+    -webkit-text-stroke-color: transparent
 .headerMenu
   display: flex
   align-items: center
@@ -515,9 +505,10 @@ h5
 .imageHome
   position: relative // Ensures that .menuHome can be positioned on top of it
   z-index: 1
-
+  max-height: 300px // Limits the height of the image
   .imageHome__image
     max-width: 100% // Ensures the image is responsive and doesn’t exceed the container's width
+
     width: auto // Maintains the aspect ratio of the image
     height: auto // Maintains the aspect ratio of the image
     object-fit: cover // Ensures the image covers the container without distortion
@@ -575,7 +566,7 @@ h5
     outline: none
     margin-left: 10px // Optional: Adjust spacing between title and button
 
-    .heart-icon
+    #animated-heart
       @extend .animated-heart // Reuse all properties from .animated-heart
 .menu
   @media (min-width: 768px)
@@ -608,7 +599,23 @@ h5
     position: absolute
     bottom: -5px // Adjust the position relative to the heading
     left: 15px // Align the line to start at the same position as the text
+.heart-container
+  position: relative // Conteneur positionné pour contenir les deux icônes superposées
+  width: 40px
+  height: 25px
 
+#static-heart
+  position: absolute
+  font-family: 'FontAwesome' // Peut être ajusté pour différents icônes
+  font-size: 1.3rem
+  color: transparent // Commence avec le cœur vide
+  -webkit-text-stroke: 1.2px black // Ajoute une bordure noire autour du cœur ou de l'icône
+  z-index: 1 // Derrière le cœur animé
+  pointer-events: none // Empêche toute interaction sur le cœur statique
+  transition: -webkit-text-stroke 0.3s ease // Transition douce pour le changement de la bordure
+
+  &:hover
+    -webkit-text-stroke-color: transparent
 .menu__item
   display: flex
   align-items: stretch // Permettre aux enfants de s'étirer en hauteur

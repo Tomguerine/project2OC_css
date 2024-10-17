@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>La palette du goût - Ohmyfood</title>
+    <title>À la française - Ohmyfood</title>
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="../main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -63,17 +63,21 @@
     <main>
       <section class="imageHome">
         <img
-          src="../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
-          alt="La palette du goût"
+          src="../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
+          alt="À la française"
           class="imageHome__image"
         />
       </section>
       <section class="menuHome">
         <div class="menuHome__header">
-          <h2 class="menuHome__title">La palette du goût</h2>
+          <h2 class="menuHome__title">À la française</h2>
           <button class="menuHome__tag menuHome__tag--new">
-            <i class="fa-regular fa-heart heart-icon"></i>
-            <!-- New heart icon -->
+            <div class="heart-container">
+              <i id="static-heart" class="fa-regular fa-heart"></i>
+              <!-- Coeur statique derrière -->
+              <i id="animated-heart" class="fa-regular fa-heart"></i>
+              <!-- Cœur animé devant -->
+            </div>
           </button>
         </div>
 
@@ -82,77 +86,26 @@
             <h3 class="menu__heading">Entrées</h3>
             <article class="menu__item">
               <div class="menu__item-info">
-                <h4 class="menu__item-name">Fricassée d'escargots</h4>
-                <p class="menu__item-description">Au piment d'Espelette</p>
+                <h4 class="menu__item-name">Tartare de poulpe acidulé</h4>
+                <p class="menu__item-description">Aux zestes d'orange</p>
               </div>
               <span class="menu__item-price">25€</span>
-              <div class="menu__item-validation" aria-hidden="true">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 60 69"
-                  fill="none"
-                >
-                  <path
-                    d="M0.5 0H44.5C52.7843 0 59.5 6.71573 59.5 15V54C59.5 62.2843 52.7843 69 44.5 69H0.5V0Z"
-                    fill="#99E2D0"
-                  />
-                  <path
-                    d="M40.0847 34.9656C40.0847 40.4884 35.6076 44.9656 30.0847 44.9656C24.5619 44.9656 20.0847 40.4884 20.0847 34.9656C20.0847 29.4427 24.5619 24.9656 30.0847 24.9656C35.6076 24.9656 40.0847 29.4427 40.0847 34.9656ZM28.928 40.2605L36.3474 32.8411C36.5993 32.5892 36.5993 32.1807 36.3474 31.9288L35.435 31.0164C35.1831 30.7644 34.7746 30.7644 34.5226 31.0164L28.4718 37.0671L25.6469 34.2421C25.3949 33.9902 24.9864 33.9902 24.7344 34.2421L23.8221 35.1545C23.5701 35.4065 23.5701 35.815 23.8221 36.0669L28.0156 40.2605C28.2676 40.5124 28.676 40.5124 28.928 40.2605Z"
-                    fill="white"
-                  />
-                </svg>
-              </div>
             </article>
             <article class="menu__item">
               <div class="menu__item-info">
-                <h4 class="menu__item-name">Foie gras de canard mi-cuit</h4>
+                <h4 class="menu__item-name">Velouté de légumes d'antan</h4>
                 <p class="menu__item-description">
-                  Et ses copeaux de truffe noire
+                  Carotte, panais, topinambour
                 </p>
               </div>
               <span class="menu__item-price">35€</span>
-              <div class="menu__item-validation" aria-hidden="true">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 60 69"
-                  fill="none"
-                >
-                  <path
-                    d="M0.5 0H44.5C52.7843 0 59.5 6.71573 59.5 15V54C59.5 62.2843 52.7843 69 44.5 69H0.5V0Z"
-                    fill="#99E2D0"
-                  />
-                  <path
-                    d="M40.0847 34.9656C40.0847 40.4884 35.6076 44.9656 30.0847 44.9656C24.5619 44.9656 20.0847 40.4884 20.0847 34.9656C20.0847 29.4427 24.5619 24.9656 30.0847 24.9656C35.6076 24.9656 40.0847 29.4427 40.0847 34.9656ZM28.928 40.2605L36.3474 32.8411C36.5993 32.5892 36.5993 32.1807 36.3474 31.9288L35.435 31.0164C35.1831 30.7644 34.7746 30.7644 34.5226 31.0164L28.4718 37.0671L25.6469 34.2421C25.3949 33.9902 24.9864 33.9902 24.7344 34.2421L23.8221 35.1545C23.5701 35.4065 23.5701 35.815 23.8221 36.0669L28.0156 40.2605C28.2676 40.5124 28.676 40.5124 28.928 40.2605Z"
-                    fill="white"
-                  />
-                </svg>
-              </div>
             </article>
-
             <article class="menu__item">
               <div class="menu__item-info">
-                <h4 class="menu__item-name">Œuf au plat</h4>
-                <p class="menu__item-description">
-                  Assaisonné à la truffe sur lit de caviar
-                </p>
+                <h4 class="menu__item-name">Soupe à l'oignon</h4>
+                <p class="menu__item-description">Revisitée</p>
               </div>
               <span class="menu__item-price">20€</span>
-              <div class="menu__item-validation" aria-hidden="true">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 60 69"
-                  fill="none"
-                >
-                  <path
-                    d="M0.5 0H44.5C52.7843 0 59.5 6.71573 59.5 15V54C59.5 62.2843 52.7843 69 44.5 69H0.5V0Z"
-                    fill="#99E2D0"
-                  />
-                  <path
-                    d="M40.0847 34.9656C40.0847 40.4884 35.6076 44.9656 30.0847 44.9656C24.5619 44.9656 20.0847 40.4884 20.0847 34.9656C20.0847 29.4427 24.5619 24.9656 30.0847 24.9656C35.6076 24.9656 40.0847 29.4427 40.0847 34.9656ZM28.928 40.2605L36.3474 32.8411C36.5993 32.5892 36.5993 32.1807 36.3474 31.9288L35.435 31.0164C35.1831 30.7644 34.7746 30.7644 34.5226 31.0164L28.4718 37.0671L25.6469 34.2421C25.3949 33.9902 24.9864 33.9902 24.7344 34.2421L23.8221 35.1545C23.5701 35.4065 23.5701 35.815 23.8221 36.0669L28.0156 40.2605C28.2676 40.5124 28.676 40.5124 28.928 40.2605Z"
-                    fill="white"
-                  />
-                </svg>
-              </div>
             </article>
           </div>
 
@@ -160,164 +113,56 @@
             <h3 class="menu__heading">Plats</h3>
             <article class="menu__item">
               <div class="menu__item-info">
-                <h4 class="menu__item-name">Filet de bœuf aux herbes</h4>
+                <h4 class="menu__item-name">Coquilles Saint-Jacques</h4>
                 <p class="menu__item-description">
-                  Accompagné de sa ribambelle de légumes
+                  Accompagnées d'une purée de panais
                 </p>
               </div>
               <span class="menu__item-price">40€</span>
-              <div class="menu__item-validation" aria-hidden="true">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 60 69"
-                  fill="none"
-                >
-                  <path
-                    d="M0.5 0H44.5C52.7843 0 59.5 6.71573 59.5 15V54C59.5 62.2843 52.7843 69 44.5 69H0.5V0Z"
-                    fill="#99E2D0"
-                  />
-                  <path
-                    d="M40.0847 34.9656C40.0847 40.4884 35.6076 44.9656 30.0847 44.9656C24.5619 44.9656 20.0847 40.4884 20.0847 34.9656C20.0847 29.4427 24.5619 24.9656 30.0847 24.9656C35.6076 24.9656 40.0847 29.4427 40.0847 34.9656ZM28.928 40.2605L36.3474 32.8411C36.5993 32.5892 36.5993 32.1807 36.3474 31.9288L35.435 31.0164C35.1831 30.7644 34.7746 30.7644 34.5226 31.0164L28.4718 37.0671L25.6469 34.2421C25.3949 33.9902 24.9864 33.9902 24.7344 34.2421L23.8221 35.1545C23.5701 35.4065 23.5701 35.815 23.8221 36.0669L28.0156 40.2605C28.2676 40.5124 28.676 40.5124 28.928 40.2605Z"
-                    fill="white"
-                  />
-                </svg>
-              </div>
             </article>
-
             <article class="menu__item">
               <div class="menu__item-info">
-                <h4 class="menu__item-name">Filet de bœuf aux herbes</h4>
+                <h4 class="menu__item-name">Magret de canard</h4>
                 <p class="menu__item-description">
-                  Accompagné de sa ribambelle de légumes
-                </p>
-              </div>
-              <span class="menu__item-price">40€</span>
-              <div class="menu__item-validation" aria-hidden="true">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 60 69"
-                  fill="none"
-                >
-                  <path
-                    d="M0.5 0H44.5C52.7843 0 59.5 6.71573 59.5 15V54C59.5 62.2843 52.7843 69 44.5 69H0.5V0Z"
-                    fill="#99E2D0"
-                  />
-                  <path
-                    d="M40.0847 34.9656C40.0847 40.4884 35.6076 44.9656 30.0847 44.9656C24.5619 44.9656 20.0847 40.4884 20.0847 34.9656C20.0847 29.4427 24.5619 24.9656 30.0847 24.9656C35.6076 24.9656 40.0847 29.4427 40.0847 34.9656ZM28.928 40.2605L36.3474 32.8411C36.5993 32.5892 36.5993 32.1807 36.3474 31.9288L35.435 31.0164C35.1831 30.7644 34.7746 30.7644 34.5226 31.0164L28.4718 37.0671L25.6469 34.2421C25.3949 33.9902 24.9864 33.9902 24.7344 34.2421L23.8221 35.1545C23.5701 35.4065 23.5701 35.815 23.8221 36.0669L28.0156 40.2605C28.2676 40.5124 28.676 40.5124 28.928 40.2605Z"
-                    fill="white"
-                  />
-                </svg>
-              </div>
-            </article>
-
-            <article class="menu__item">
-              <div class="menu__item-info">
-                <h4 class="menu__item-name">Parmentier de queue de bœuf</h4>
-                <p class="menu__item-description">
-                  À la truffe noire sur sa purée de panais
+                  Et parmentier de pommes de terre
                 </p>
               </div>
               <span class="menu__item-price">35€</span>
-              <div class="menu__item-validation" aria-hidden="true">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 60 69"
-                  fill="none"
-                >
-                  <path
-                    d="M0.5 0H44.5C52.7843 0 59.5 6.71573 59.5 15V54C59.5 62.2843 52.7843 69 44.5 69H0.5V0Z"
-                    fill="#99E2D0"
-                  />
-                  <path
-                    d="M40.0847 34.9656C40.0847 40.4884 35.6076 44.9656 30.0847 44.9656C24.5619 44.9656 20.0847 40.4884 20.0847 34.9656C20.0847 29.4427 24.5619 24.9656 30.0847 24.9656C35.6076 24.9656 40.0847 29.4427 40.0847 34.9656ZM28.928 40.2605L36.3474 32.8411C36.5993 32.5892 36.5993 32.1807 36.3474 31.9288L35.435 31.0164C35.1831 30.7644 34.7746 30.7644 34.5226 31.0164L28.4718 37.0671L25.6469 34.2421C25.3949 33.9902 24.9864 33.9902 24.7344 34.2421L23.8221 35.1545C23.5701 35.4065 23.5701 35.815 23.8221 36.0669L28.0156 40.2605C28.2676 40.5124 28.676 40.5124 28.928 40.2605Z"
-                    fill="white"
-                  />
-                </svg>
-              </div>
             </article>
-
-            <!-- Repeat for other Plats -->
+            <article class="menu__item">
+              <div class="menu__item-info">
+                <h4 class="menu__item-name">Pigeonneau d'Ille-et-Vilaine</h4>
+                <p class="menu__item-description">
+                  Sur son lit de gnocchis aux légumes
+                </p>
+              </div>
+              <span class="menu__item-price">44€</span>
+            </article>
           </div>
 
           <div class="menu__section">
             <h3 class="menu__heading">Desserts</h3>
-
             <article class="menu__item">
               <div class="menu__item-info">
-                <h4 class="menu__item-name">Paris-Brest</h4>
-                <p class="menu__item-description">Revisité</p>
+                <h4 class="menu__item-name">Pétales de violettes glacés</h4>
+                <p class="menu__item-description">Et purée de noisettes</p>
               </div>
               <span class="menu__item-price">18€</span>
-              <div class="menu__item-validation" aria-hidden="true">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 60 69"
-                  fill="none"
-                >
-                  <path
-                    d="M0.5 0H44.5C52.7843 0 59.5 6.71573 59.5 15V54C59.5 62.2843 52.7843 69 44.5 69H0.5V0Z"
-                    fill="#99E2D0"
-                  />
-                  <path
-                    d="M40.0847 34.9656C40.0847 40.4884 35.6076 44.9656 30.0847 44.9656C24.5619 44.9656 20.0847 40.4884 20.0847 34.9656C20.0847 29.4427 24.5619 24.9656 30.0847 24.9656C35.6076 24.9656 40.0847 29.4427 40.0847 34.9656ZM28.928 40.2605L36.3474 32.8411C36.5993 32.5892 36.5993 32.1807 36.3474 31.9288L35.435 31.0164C35.1831 30.7644 34.7746 30.7644 34.5226 31.0164L28.4718 37.0671L25.6469 34.2421C25.3949 33.9902 24.9864 33.9902 24.7344 34.2421L23.8221 35.1545C23.5701 35.4065 23.5701 35.815 23.8221 36.0669L28.0156 40.2605C28.2676 40.5124 28.676 40.5124 28.928 40.2605Z"
-                    fill="white"
-                  />
-                </svg>
-              </div>
             </article>
-
             <article class="menu__item">
               <div class="menu__item-info">
-                <h4 class="menu__item-name">Macaron au chocolat d'exception</h4>
-                <p class="menu__item-description">
-                  Et glace à la vanille de Madagascar
-                </p>
+                <h4 class="menu__item-name">Fondant au chocolat</h4>
+                <p class="menu__item-description">Revisité</p>
               </div>
               <span class="menu__item-price">22€</span>
-              <div class="menu__item-validation" aria-hidden="true">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 60 69"
-                  fill="none"
-                >
-                  <path
-                    d="M0.5 0H44.5C52.7843 0 59.5 6.71573 59.5 15V54C59.5 62.2843 52.7843 69 44.5 69H0.5V0Z"
-                    fill="#99E2D0"
-                  />
-                  <path
-                    d="M40.0847 34.9656C40.0847 40.4884 35.6076 44.9656 30.0847 44.9656C24.5619 44.9656 20.0847 40.4884 20.0847 34.9656C20.0847 29.4427 24.5619 24.9656 30.0847 24.9656C35.6076 24.9656 40.0847 29.4427 40.0847 34.9656ZM28.928 40.2605L36.3474 32.8411C36.5993 32.5892 36.5993 32.1807 36.3474 31.9288L35.435 31.0164C35.1831 30.7644 34.7746 30.7644 34.5226 31.0164L28.4718 37.0671L25.6469 34.2421C25.3949 33.9902 24.9864 33.9902 24.7344 34.2421L23.8221 35.1545C23.5701 35.4065 23.5701 35.815 23.8221 36.0669L28.0156 40.2605C28.2676 40.5124 28.676 40.5124 28.928 40.2605Z"
-                    fill="white"
-                  />
-                </svg>
-              </div>
             </article>
-
             <article class="menu__item">
               <div class="menu__item-info">
-                <h4 class="menu__item-name">Mousse au chocolat</h4>
-                <p class="menu__item-description">
-                  Au piment d'Espelette et à la truffe noire
-                </p>
+                <h4 class="menu__item-name">Millefeuille croustillant</h4>
+                <p class="menu__item-description">Myrtilles et pâte d'amande</p>
               </div>
               <span class="menu__item-price">23€</span>
-              <div class="menu__item-validation" aria-hidden="true">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 60 69"
-                  fill="none"
-                >
-                  <path
-                    d="M0.5 0H44.5C52.7843 0 59.5 6.71573 59.5 15V54C59.5 62.2843 52.7843 69 44.5 69H0.5V0Z"
-                    fill="#99E2D0"
-                  />
-                  <path
-                    d="M40.0847 34.9656C40.0847 40.4884 35.6076 44.9656 30.0847 44.9656C24.5619 44.9656 20.0847 40.4884 20.0847 34.9656C20.0847 29.4427 24.5619 24.9656 30.0847 24.9656C35.6076 24.9656 40.0847 29.4427 40.0847 34.9656ZM28.928 40.2605L36.3474 32.8411C36.5993 32.5892 36.5993 32.1807 36.3474 31.9288L35.435 31.0164C35.1831 30.7644 34.7746 30.7644 34.5226 31.0164L28.4718 37.0671L25.6469 34.2421C25.3949 33.9902 24.9864 33.9902 24.7344 34.2421L23.8221 35.1545C23.5701 35.4065 23.5701 35.815 23.8221 36.0669L28.0156 40.2605C28.2676 40.5124 28.676 40.5124 28.928 40.2605Z"
-                    fill="white"
-                  />
-                </svg>
-              </div>
             </article>
-            <!-- Repeat for other Desserts -->
           </div>
         </div>
 
